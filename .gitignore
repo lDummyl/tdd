@@ -1,5 +1,4 @@
 # Project exclude paths
 /target/
-/testing.iml
 /.idea/
 /tdd.iml
