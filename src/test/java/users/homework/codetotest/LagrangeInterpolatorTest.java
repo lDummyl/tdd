@@ -9,7 +9,7 @@ import java.util.List;
 
 
 public class LagrangeInterpolatorTest {
-
+    // тестируем функцию y=x^2
     @Test
     public void getY_quadratic_function_1() {
         LagrangeInterpolator lagrangeInterpolator = new LagrangeInterpolator();
@@ -23,11 +23,24 @@ public class LagrangeInterpolatorTest {
     @Test
     public void getY_quadratic_function_2() {
         LagrangeInterpolator lagrangeInterpolator = new LagrangeInterpolator();
-
         lagrangeInterpolator.points.add(new Point( -27.5f, (float) Math.pow(-27.5, 2)));
         lagrangeInterpolator.points.add(new Point(-0.5f, (float) Math.pow(-0.5, 2)));
         lagrangeInterpolator.points.add(new Point(13.7f, (float) Math.pow(13.7, 2)));
         double resultY = lagrangeInterpolator.getY(5.75f);
         assertEquals(Math.pow(5.75, 2), resultY,0.5);
+    }
+
+    @Test
+    public void getY_quadratic_function_3() {
+        LagrangeInterpolator lagrangeInterpolator = new LagrangeInterpolator();
+        lagrangeInterpolator.points.add(new Point( -27.5f, (float) Math.pow(-27.5, 2)));
+        lagrangeInterpolator.points.add(new Point(-0.5f, (float) Math.pow(-0.5, 2)));
+        lagrangeInterpolator.points.add(new Point(13.7f, (float) Math.pow(13.7, 2)));
+
+        for (float x = -20f; x<=20f; x+=0.1f) {
+            double resultY = lagrangeInterpolator.getY(x);
+            assertEquals(Math.pow(x, 2), resultY,0.5);
+
+        }
     }
 }
