@@ -1,14 +1,13 @@
 package users.homework.codetotest;
 
+import junit.framework.TestCase;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
-public class LagrangeInterpolatorTest {
-    private final LagrangeInterpolator interpolator = new LagrangeInterpolator();
+public class NewtonInterpolatorTest extends TestCase {
+    private final NewtonInterpolator interpolator = new NewtonInterpolator();
 
     @Test
-    public void getY_quadratic_function_1() {
+    public void testGetY() {
         interpolator.points.add(new Point(-10, 30));
         interpolator.points.add(new Point(0, 0));
         interpolator.points.add(new Point(10, 30));
