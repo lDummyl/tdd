@@ -16,6 +16,7 @@ public class NewtonInterpolator implements Interpolator {
         return pro;
     }
 
+
     private void dividedDiffTable(float[] x, float[][] y, int n) {
         for (int i = 1; i < n; i++) {
             for (int j = 0; j < n - i; j++) {
