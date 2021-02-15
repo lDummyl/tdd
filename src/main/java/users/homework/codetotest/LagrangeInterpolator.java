@@ -60,3 +60,4 @@ public class LagrangeInterpolator implements Interpolator {
 	}
 }
 
+
